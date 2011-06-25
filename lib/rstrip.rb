@@ -1,0 +1,3 @@
+module Rstrip
+  # Your code goes here...
+end
