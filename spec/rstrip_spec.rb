@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'rstrip/rstrip'
 
 describe Rstrip::Rstrip do

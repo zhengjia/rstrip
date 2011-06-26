@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'rstrip/cli'
+Rstrip::CLI.start

@@ -1,0 +1,10 @@
+rb
+erb
+haml
+js
+coffee
+css
+scss
+rdoc
+feature
+yml
