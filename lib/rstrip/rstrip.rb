@@ -4,11 +4,30 @@ module Rstrip
 
     class << self
 
-      def process(line)
+      def process(file_path)
+        if File.symlink?(file_path)
+          puts "skip symlink #{file_path}" and return
+        elsif !File.writable?(file_path)
+          puts "skip read only #{file_path}" and return
+        else
+          puts "process #{file_path}"
+        end
+        content = ""
+        File.open(file_path, 'r') do |file|
+          file.each_line do |line|
+            content << rstrip(line)
+          end
+        end
+        File.open(file_path, 'w') do |file|
+          file.write(content.rstrip)
+        end
+      end
+
+      def rstrip(line)
         line.rstrip + "\n"
       end
 
-      def show
+      def list
         if File.exists?("#{Dir.pwd}/.rstrip")
           path = "#{Dir.pwd}/.rstrip"
           puts "Using #{Dir.pwd}/.rstrip in the current directory"
@@ -22,7 +41,7 @@ module Rstrip
           exit
         end
         extensions = get_extensions(path)
-        files = get_files(extensions)
+        get_files(extensions)
       end
 
     private
