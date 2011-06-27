@@ -28,7 +28,7 @@ module Rstrip
       end
     end
 
-    desc "run", "run rstrip in the current folder recursively"
+    desc "process", "run rstrip in the current folder recursively"
     def process
       Rstrip.list.collect{ |f| Rstrip.process(f) }
     end
