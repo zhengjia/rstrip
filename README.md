@@ -2,16 +2,16 @@
 
 rstrip provides a ruby executable that removes the trailing white space in the current project directory.
 
-It also remove the last empty line if there is one.
+It also remove empty lines at the end of a file.
 
 It's configurable on the file types it will operate on.
 
 == Usage
-* Install the gem: gem install rstrip
+* Install the gem: `gem install rstrip`
 * In your project folder run `rstrip config generate`, or run `rstrip config generate --global true` to generate the config file in your home directory
-* Modify the list of file extensions generated in the .rstrip config file
+* Modify the list of file extensions in the .rstrip config file
 * In your project folder run `rstrip process`
-* Example the change and commit the code
+* Examine the changes and commit the code
 
 == Alternatives:
 There are a lot of ways to do the similar thing:
