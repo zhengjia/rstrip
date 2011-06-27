@@ -31,7 +31,7 @@ module Rstrip
         if File.exists?("#{Dir.pwd}/.rstrip")
           path = "#{Dir.pwd}/.rstrip"
           puts "Using #{Dir.pwd}/.rstrip in the current directory"
-        elsif File.exists?("~/.rstrip")
+        elsif File.exists?("#{Dir.home}/.rstrip")
           path ="#{Dir.home}/.rstrip"
           puts "Using #{Dir.home}/.rstrip in your home directory"
         else
