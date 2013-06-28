@@ -19,7 +19,7 @@ module Rstrip
           end
         end
         File.open(file_path, 'w') do |file|
-          file.write(content.rstrip)
+          file.write(content.rstrip + "\n")
         end
       end
 
