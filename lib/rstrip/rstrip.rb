@@ -6,9 +6,14 @@ module Rstrip
 
       def process(file_path)
         if File.symlink?(file_path)
-          puts "skip symlink #{file_path}" and return
+          puts "skip symlink #{file_path}"
+          return
         elsif !File.writable?(file_path)
-          puts "skip read only #{file_path}" and return
+          puts "skip read only #{file_path}"
+          return
+        elsif File.directory?(file_path)
+          # Return quietly
+          return
         else
           puts "process #{file_path}"
         end
